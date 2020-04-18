@@ -13,6 +13,13 @@ namespace Ribbonwood_Gaming_Site.Controllers
             return View();
         }
 
+        public ActionResult Privacy()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -21,6 +28,13 @@ namespace Ribbonwood_Gaming_Site.Controllers
         }
 
         public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult FAQ()
         {
             ViewBag.Message = "Your contact page.";
 
