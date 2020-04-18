@@ -12,9 +12,9 @@ namespace Ribbonwood_Gaming_Site.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly Ribbonwood_Gaming_SiteContext _context;
+        private readonly ProductContext _context;
 
-        public ProductsController(Ribbonwood_Gaming_SiteContext context)
+        public ProductsController(ProductContext context)
         {
             _context = context;
         }
@@ -22,7 +22,7 @@ namespace Ribbonwood_Gaming_Site.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            return View(await _context.Movie.ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -33,7 +33,7 @@ namespace Ribbonwood_Gaming_Site.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product
+            var product = await _context.Movie
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (product == null)
             {
@@ -73,7 +73,7 @@ namespace Ribbonwood_Gaming_Site.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product.FindAsync(id);
+            var product = await _context.Movie.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace Ribbonwood_Gaming_Site.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product
+            var product = await _context.Movie
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (product == null)
             {
@@ -139,15 +139,15 @@ namespace Ribbonwood_Gaming_Site.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var product = await _context.Product.FindAsync(id);
-            _context.Product.Remove(product);
+            var product = await _context.Movie.FindAsync(id);
+            _context.Movie.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProductExists(int id)
         {
-            return _context.Product.Any(e => e.ID == id);
+            return _context.Movie.Any(e => e.ID == id);
         }
     }
 }

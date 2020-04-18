@@ -27,8 +27,8 @@ namespace Ribbonwood_Gaming_Site
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<Ribbonwood_Gaming_SiteContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Ribbonwood_Gaming_SiteContext")));
+            services.AddDbContext<ProductContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ProductContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
