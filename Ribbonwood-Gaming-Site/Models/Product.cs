@@ -10,9 +10,6 @@ namespace Ribbonwood_Gaming_Site.Models
         public int ID { get; set; }
         public float Price { get; set; }
         public int Quantity { get; set; }
-
-        // Navigation Properties
-        public int VendorID { get; set; }
         public Vendor Vendor { get; set; }
 
     }

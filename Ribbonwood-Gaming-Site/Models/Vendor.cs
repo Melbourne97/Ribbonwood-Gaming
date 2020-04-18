@@ -11,8 +11,6 @@ namespace Ribbonwood_Gaming_Site.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-
-        // Navigation Properties
         public ICollection<Product> Products { get; set; }
     }
 }
