@@ -19,6 +19,42 @@ namespace Ribbonwood_Gaming_Site.Controllers
             _context = context;
         }
 
+        // GET: WizardsOfTheCoast
+        public async Task<IActionResult> WizardsOfTheCoast()
+        {
+            return View(await _context.Movie.ToListAsync());
+        }
+
+        // GET: LevelUpDice
+        public async Task<IActionResult> LevelUpDice()
+        {
+            return View(await _context.Movie.ToListAsync());
+        }
+
+        // GET: HeroForge
+        public async Task<IActionResult> HeroForge()
+        {
+            return View(await _context.Movie.ToListAsync());
+        }
+
+        // GET: Wyrmwood
+        public async Task<IActionResult> Wyrmwood()
+        {
+            return View(await _context.Movie.ToListAsync());
+        }
+
+        // GET: Bundles
+        public async Task<IActionResult> Bundles()
+        {
+            return View(await _context.Movie.ToListAsync());
+        }
+
+        // GET: Merch
+        public async Task<IActionResult> Merch()
+        {
+            return View(await _context.Movie.ToListAsync());
+        }
+
         // GET: Products
         public async Task<IActionResult> Index()
         {
