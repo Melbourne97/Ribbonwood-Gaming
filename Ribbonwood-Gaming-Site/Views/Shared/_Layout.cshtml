@@ -20,9 +20,32 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-item" role="combobox" aria-expanded="false" href="#" data-toggle="dropdown">Products <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Wizards of the Coast", "WizardsOfTheCoast", "Home")</li>
+                            <li>@Html.ActionLink("Level Up Dice", "LevelUpDice", "Home")</li>
+                            <li>@Html.ActionLink("Hero Forge", "HeroForge", "Home")</li>
+                            <li>@Html.ActionLink("Wyrmwood", "Wyrmwood", "Home")</li>
+                            <li>@Html.ActionLink("Bundles", "Bundles", "Home")</li>
+                            <li>@Html.ActionLink("Merch", "Merch", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Privacy", "Privacy", "Home")
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("About", "About", "Home")
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contact Us", "ContactUs", "Home")
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("FAQ", "FAQ", "Home")
+                    </li>
                 </ul>
             </div>
         </div>
