@@ -13,5 +13,6 @@ namespace Ribbonwood_Gaming_Site.Models
 
         [DataType(DataType.Date)]
         public DateTime DateCreated { get; set; }
+        public IEnumerable<OrderItem> OrderItems { get; set; }
     }
 }

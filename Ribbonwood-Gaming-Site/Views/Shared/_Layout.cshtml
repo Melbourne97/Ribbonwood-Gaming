@@ -24,13 +24,13 @@
                         <li class="dropdown">
                             <a class="dropdown-item" role="combobox" aria-expanded="false" href="#" data-toggle="dropdown">Products <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="WizardsOfTheCoast">Wizards of the Coast</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="LevelUpDice">Level Up Dice</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="HeroForge">Hero Forge</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Wyrmwood">Wyrmwood</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Bundles">Bundles</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Merch">Merch</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Store">Store</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Store" asp-route-vendor="Wizards of the Coast">Wizards of the Coast</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Store" asp-route-vendor="Level Up Dice">Level Up Dice</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Store" asp-route-vendor="Hero Forge">Hero Forge</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Store" asp-route-vendor="Wyrmwood">Wyrmwood</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Store" asp-route-vendor="Bundles">Bundles</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Store" asp-route-vendor="Merch">Merch</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -44,6 +44,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
                         </li>
                     </ul>
                 </div>

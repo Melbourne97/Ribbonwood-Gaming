@@ -1,45 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ribbonwood_Gaming_Site.Data;
 using Ribbonwood_Gaming_Site.Models;
-using Ribbonwood_Gaming_Site.ViewModels;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Ribbonwood_Gaming_Site.Controllers
 {
-    public class ProductsController : Controller
+    public class OrdersController : Controller
     {
         private readonly RibbonwoodContext _context;
 
-        public ProductsController(RibbonwoodContext context)
+        public OrdersController(RibbonwoodContext context)
         {
             _context = context;
         }
 
-        // GET: Products
+        // GET: Orders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+            return View(await _context.Orders.ToListAsync());
         }
 
-        // GET: Products/Store?vendor=Wyrmwood
-        // Returns products from specific Vendor
-        public async Task<IActionResult> Store(string vendor)
-        {
-            if(vendor == null)
-            {
-                return View(new ProductVendorViewModel(await _context.Products.ToListAsync()));
-            }
-
-            var products = from product in _context.Products
-                           where product.Vendor == vendor
-                           select product;
-
-            return View(new ProductVendorViewModel(await products.ToListAsync(), vendor));
-        }
-
-        // GET: Products/Details/5
+        // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,39 +33,39 @@ namespace Ribbonwood_Gaming_Site.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products
+            var order = await _context.Orders
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (product == null)
+            if (order == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            return View(order);
         }
 
-        // GET: Products/Create
+        // GET: Orders/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Products/Create
+        // POST: Orders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Price,Quantity,Vendor")] Product product)
+        public async Task<IActionResult> Create([Bind("ID,Status,DateCreated")] Order order)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(product);
+                _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(product);
+            return View(order);
         }
 
-        // GET: Products/Edit/5
+        // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,22 +73,22 @@ namespace Ribbonwood_Gaming_Site.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.FindAsync(id);
-            if (product == null)
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null)
             {
                 return NotFound();
             }
-            return View(product);
+            return View(order);
         }
 
-        // POST: Products/Edit/5
+        // POST: Orders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Price,Quantity,Vendor")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Status,DateCreated")] Order order)
         {
-            if (id != product.ID)
+            if (id != order.ID)
             {
                 return NotFound();
             }
@@ -111,12 +97,12 @@ namespace Ribbonwood_Gaming_Site.Controllers
             {
                 try
                 {
-                    _context.Update(product);
+                    _context.Update(order);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductExists(product.ID))
+                    if (!OrderExists(order.ID))
                     {
                         return NotFound();
                     }
@@ -127,10 +113,10 @@ namespace Ribbonwood_Gaming_Site.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(product);
+            return View(order);
         }
 
-        // GET: Products/Delete/5
+        // GET: Orders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -138,30 +124,30 @@ namespace Ribbonwood_Gaming_Site.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products
+            var order = await _context.Orders
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (product == null)
+            if (order == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            return View(order);
         }
 
-        // POST: Products/Delete/5
+        // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var product = await _context.Products.FindAsync(id);
-            _context.Products.Remove(product);
+            var order = await _context.Orders.FindAsync(id);
+            _context.Orders.Remove(order);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductExists(int id)
+        private bool OrderExists(int id)
         {
-            return _context.Products.Any(e => e.ID == id);
+            return _context.Orders.Any(e => e.ID == id);
         }
     }
 }

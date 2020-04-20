@@ -1,0 +1,52 @@
+﻿@model Ribbonwood_Gaming_Site.ViewModels.ProductVendorViewModel
+
+@{
+    ViewData["Title"] = "Store";
+}
+
+<h1>Store @((Model.Vendor == null) ? "" : "- " + Model.Vendor)</h1>
+@if (Model.Products.Count() == 0)
+{
+    <div class="container">
+        <h3 style="color: red">Out of Stock</h3>
+    </div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Products)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                @if (item.Quantity == 0)
+                {
+                    <td style="color: red">
+                        Out of Stock
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @String.Format("{0:c}", item.Price)
+                    </td>
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
