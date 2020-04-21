@@ -9,6 +9,14 @@
 <p>
     <a class="btn-link" asp-action="Create">Create New</a>
 </p>
+
+<form asp-controller="Products" asp-action="Index">
+    <p>
+        Title: <input type="text" name="filter">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>

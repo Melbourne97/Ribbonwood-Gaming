@@ -142,7 +142,6 @@ namespace Ribbonwood_Gaming_Site.Models
                         Vendor = "Merch",
                         Description = "A Sticker Set of the Wyrmwood Logo."
                     }
-
                 );
                 context.SaveChanges();
             }
