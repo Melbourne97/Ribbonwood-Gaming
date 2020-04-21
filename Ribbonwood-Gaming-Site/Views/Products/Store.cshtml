@@ -22,42 +22,48 @@ else
                 <th>
                     Price
                 </th>
-                @if (Model.Vendor == null)
-                {
+            @if (Model.Vendor == null)
+            {
                 <th>
                     Vendor
                 </th>
-                }
+                <th>
+                    Description
+                </th>
+            }
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Products)
-            {
+        @foreach (var item in Model.Products)
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
-                @if (item.Quantity == 0)
-                {
-                    <td style="color: red">
-                        Out of Stock
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        @String.Format("{0:c}", item.Price)
-                    </td>
-                }
-                @if (Model.Vendor == null)
-                {
+            @if (item.Quantity == 0)
+            {
+                <td style="color: red">
+                    Out of Stock
+                </td>
+            }
+            else
+            {
+                <td>
+                    @String.Format("{0:c}", item.Price)
+                </td>
+            }
+            @if (Model.Vendor == null)
+            {
                 <td>
                     @Html.DisplayFor(modelItem => item.Vendor)
                 </td>
-                }
-            </tr>
             }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
 }

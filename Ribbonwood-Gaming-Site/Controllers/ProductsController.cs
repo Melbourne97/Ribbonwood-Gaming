@@ -23,14 +23,16 @@ namespace Ribbonwood_Gaming_Site.Controllers
             return View(await _context.Products.ToListAsync());
         }
 
+        // GET: Products/Store
+        public async Task<IActionResult> Store()
+        {
+            return View(new ProductVendorViewModel(await _context.Products.ToListAsync()));
+        }
+
         // GET: Products/Store?vendor=Wyrmwood
         // Returns products from specific Vendor
         public async Task<IActionResult> Store(string vendor)
         {
-            if(vendor == null)
-            {
-                return View(new ProductVendorViewModel(await _context.Products.ToListAsync()));
-            }
 
             var products = from product in _context.Products
                            where product.Vendor == vendor
