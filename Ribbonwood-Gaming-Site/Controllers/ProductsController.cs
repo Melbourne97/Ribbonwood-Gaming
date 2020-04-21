@@ -18,25 +18,30 @@ namespace Ribbonwood_Gaming_Site.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string filter)
         {
-            return View(await _context.Products.ToListAsync());
-        }
+            var products = from product in _context.Products
+                           select product;
 
-        // GET: Products/Store
-        public async Task<IActionResult> Store()
-        {
-            return View(new ProductVendorViewModel(await _context.Products.ToListAsync()));
+            if (!string.IsNullOrEmpty(filter))
+            {
+                products = products.Where(p => p.Name.Contains(filter));
+            }
+
+            return View(await products.ToListAsync());
         }
 
         // GET: Products/Store?vendor=Wyrmwood
         // Returns products from specific Vendor
         public async Task<IActionResult> Store(string vendor)
         {
-
             var products = from product in _context.Products
-                           where product.Vendor == vendor
                            select product;
+
+            if (!string.IsNullOrEmpty(vendor))
+            {
+                products = products.Where(p => p.Vendor.Equals(vendor));
+            }
 
             return View(new ProductVendorViewModel(await products.ToListAsync(), vendor));
         }

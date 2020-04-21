@@ -2,9 +2,15 @@
 
 @{
     ViewData["Title"] = "Store";
+    string pageTitle = (String.IsNullOrEmpty(Model.Vendor)) ? "All Products" : Model.Vendor;
 }
 
-<h1>Store @((Model.Vendor == null) ? "" : "- " + Model.Vendor)</h1>
+<br />
+<br />
+<br />
+    
+<h1>@pageTitle</h1>
+
 @if (Model.Products.Count() == 0)
 {
     <div class="container">
