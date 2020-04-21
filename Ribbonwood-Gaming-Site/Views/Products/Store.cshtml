@@ -22,6 +22,12 @@ else
                 <th>
                     Price
                 </th>
+                @if (Model.Vendor == null)
+                {
+                <th>
+                    Vendor
+                </th>
+                }
                 <th></th>
             </tr>
         </thead>
@@ -43,6 +49,12 @@ else
                     <td>
                         @String.Format("{0:c}", item.Price)
                     </td>
+                }
+                @if (Model.Vendor == null)
+                {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendor)
+                </td>
                 }
             </tr>
             }
