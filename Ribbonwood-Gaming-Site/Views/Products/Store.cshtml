@@ -4,6 +4,12 @@
     ViewData["Title"] = "Store";
 }
 
+<br />
+<br />
+<br />
+<br />
+<br />
+
 <h1>Store @((Model.Vendor == null) ? "" : "- " + Model.Vendor)</h1>
 @if (Model.Products.Count() == 0)
 {
@@ -28,23 +34,23 @@ else
         <tbody>
             @foreach (var item in Model.Products)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                @if (item.Quantity == 0)
-                {
-                    <td style="color: red">
-                        Out of Stock
-                    </td>
-                }
-                else
-                {
+                <tr>
                     <td>
-                        @String.Format("{0:c}", item.Price)
+                        @Html.DisplayFor(modelItem => item.Name)
                     </td>
-                }
-            </tr>
+                    @if (item.Quantity == 0)
+                    {
+                        <td style="color: red">
+                            Out of Stock
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @String.Format("{0:c}", item.Price)
+                        </td>
+                    }
+                </tr>
             }
         </tbody>
     </table>
