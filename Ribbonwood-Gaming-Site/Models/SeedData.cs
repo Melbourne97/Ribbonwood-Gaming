@@ -33,7 +33,7 @@ namespace Ribbonwood_Gaming_Site.Models
                     {
                         Name = "Player Bundle",
                         Price = 55.0F,
-                        Quantity = 320,
+                        Quantity = 0,
                         Vendor = "Bundles",
                         Description = "The Player Bundle is the perfect bundle for either beginners to Dungeons and Dragons or if you just want to be a player in a campaign for now. It includes a Player’s Handbook, 5 sets of dice in a carrying bag, and a generic mini!"
                     },
