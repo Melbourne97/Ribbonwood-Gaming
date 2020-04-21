@@ -141,6 +141,86 @@ namespace Ribbonwood_Gaming_Site.Models
                         Quantity = 364,
                         Vendor = "Merch",
                         Description = "A Sticker Set of the Wyrmwood Logo."
+                    },
+                    new Product
+                    {
+                        Name = "Wizards of the Coast Playmat",
+                        Price = 15.0F,
+                        Quantity = 250,
+                        Vendor = "Wizards of the Coast",
+                        Description = "A playmat that was designed with your table in mind. It will be the protective barrier for your table from all the terrible dice rolls."
+                    },
+                    new Product
+                    {
+                        Name = "Hero Forge Mini",
+                        Price = 2.0F,
+                        Quantity = 550,
+                        Vendor = "Hero Forge",
+                        Description = "This is a purchase of a random generic mini made by us."
+                    },
+                    new Product
+                    {
+                        Name = "Dungeons and Dragons Dice Vault - Cherry",
+                        Price = 40.0F,
+                        Quantity = 60,
+                        Vendor = "Wyrmwood",
+                        Description = "This classic Cherry Dice Vault with engraving is a perfect choice for your favorite halfling.  Keep your dice close at hand, and represent the world’s greatest role-playing game."
+                    },
+                    new Product
+                    {
+                        Name = "Dungeons and Dragons Dice Vault - Padauk",
+                        Price = 70.0F,
+                        Quantity = 50,
+                        Vendor = "Wyrmwood",
+                        Description = "This classic Padauk Dice Vault with engraving is a perfect choice for your favorite halfling.  Keep your dice close at hand, and represent the world’s greatest role-playing game."
+                    },
+                    new Product
+                    {
+                        Name = "Dungeons and Dragons Dice Vault - Wenge",
+                        Price = 100.0F,
+                        Quantity = 45,
+                        Vendor = "Wyrmwood",
+                        Description = "This classic Wenge Dice Vault with engraving is a perfect choice for your favorite halfling.  Keep your dice close at hand, and represent the world’s greatest role-playing game."
+                    },
+                    new Product
+                    {
+                        Name = "Dungeons and Dragons Tabletop Tray - Cherry",
+                        Price = 125.0F,
+                        Quantity = 40,
+                        Vendor = "Wyrmwood",
+                        Description = "This breathtaking, officially licensed Cherry Tabletop Dice Tray features the iconic Dungeons & Dragons Ampersand, printed on Vegan synthetic leather.  How do you make playing the World’s Greatest Roleplaying Game even better?  With the world’s finest tabletop gaming accessories."
+                    },
+                    new Product
+                    {
+                        Name = "Dungeons and Dragons Tabletop Tray - Padauk",
+                        Price = 165.0F,
+                        Quantity = 35,
+                        Vendor = "Wyrmwood",
+                        Description = "This breathtaking, officially licensed Padauk Tabletop Dice Tray features the iconic Dungeons & Dragons Ampersand, printed on Vegan synthetic leather.  How do you make playing the World’s Greatest Roleplaying Game even better?  With the world’s finest tabletop gaming accessories."
+                    },
+                    new Product
+                    {
+                        Name = "Dungeons and Dragons Tabletop Tray - Wenge",
+                        Price = 195.0F,
+                        Quantity = 30,
+                        Vendor = "Wyrmwood",
+                        Description = "This breathtaking, officially licensed Wenge Tabletop Dice Tray features the iconic Dungeons & Dragons Ampersand, printed on Vegan synthetic leather.  How do you make playing the World’s Greatest Roleplaying Game even better?  With the world’s finest tabletop gaming accessories."
+                    },
+                    new Product
+                    {
+                        Name = "Ribbonwood Dice",
+                        Price = 25.0F,
+                        Quantity = 500,
+                        Vendor = "Level Up Dice",
+                        Description = "Custom Ribbonwood Games dice designed by Level Up Dice."
+                    },
+                    new Product
+                    {
+                        Name = "Reject Dice",
+                        Price = 10.0F,
+                        Quantity = 200,
+                        Vendor = "Level Up Dice",
+                        Description = "The reject pile is a bunch of dice that are not to code to sell full price. They are lonely and are in need of adoption."
                     }
                 );
                 context.SaveChanges();
